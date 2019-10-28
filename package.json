@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "type-check": "tsc --noEmit",
-    "type-check:watch": "npm run type-check -- --watch",
     "build": "npm run build:types && npm run build:js",
     "build:types": "tsc --emitDeclarationOnly",
-    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline"
+    "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
+    "clean": "rimraf dist",
+    "dev": "NODE_ENV=development ts-node ./src/index.ts",
+    "prod": "NODE_ENV=production npm run clean && npm run build && node ./dist/index.js",
+    "start": "nodemon"
   },
   "keywords": [],
   "author": "",
@@ -21,7 +23,9 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.6.2",
     "@babel/preset-env": "^7.6.3",
     "@babel/preset-typescript": "^7.6.0",
+    "@types/node": "^12.11.7",
     "nodemon": "^1.19.4",
+    "rimraf": "^3.0.0",
     "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
   }

@@ -20,6 +20,9 @@ tags
 [._]*.un~
 
 ### Node ###
+# Build
+dist/
+
 # Logs
 logs
 *.log
