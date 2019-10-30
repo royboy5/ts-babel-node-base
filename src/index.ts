@@ -4,4 +4,3 @@ test();
 test();
 
 console.log('hello');
-
