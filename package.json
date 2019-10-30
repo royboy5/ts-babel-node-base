@@ -9,6 +9,8 @@
     "build:js": "babel src --out-dir dist --extensions \".ts,.tsx\" --source-maps inline",
     "clean": "rimraf dist",
     "dev": "NODE_ENV=development ts-node ./src/index.ts",
+    "lint": "eslint src -c .eslintrc.js --ext js,ts",
+    "lint:fix": "npm run lint -- --fix",
     "prod": "NODE_ENV=production npm run clean && npm run build && node ./dist/index.js",
     "start": "nodemon"
   },
